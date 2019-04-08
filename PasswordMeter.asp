@@ -40,7 +40,7 @@
 			' Create an array of the password characters '
 			'--------------------------------------------'
 			
-			Dim a, b, c
+			Dim a, b, c, arrPwd()
 			
 			ReDim arrPwd(len(pwd) - 1)
 			
