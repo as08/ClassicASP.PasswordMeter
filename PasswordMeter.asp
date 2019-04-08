@@ -5,7 +5,7 @@
 
 	function password_strength(ByVal pwd)		
 		
-		if isEmpty(pwd) OR isNull(pwd) then
+		if isEmpty(pwd) OR isNull(pwd) OR len(pwd) = 0 then
 			
 			password_strength = 0
 			exit function
