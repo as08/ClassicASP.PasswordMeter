@@ -322,68 +322,53 @@
 		
 			' General point assignment
 				
-			if alphaUC > 0 AND alphaUC < length then _
-				score = int(score + ((length - alphaUC) * 2)) : _
-				requirements = requirements + 1	
+			if alphaUC > 0 AND alphaUC < length then score = int(score + ((length - alphaUC) * 2)) : _
+			requirements = requirements + 1	
 			
-			if alphaLC > 0 AND alphaLC < length then _
-				score = int(score + ((length - alphaLC) * 2)) : _
-				requirements = requirements + 1
+			if alphaLC > 0 AND alphaLC < length then score = int(score + ((length - alphaLC) * 2)) : _
+			requirements = requirements + 1
 			
-			if numbers > 0 AND numbers < length then _
-				score = int(score + (numbers * multNumber)) : _
-				requirements = requirements + 1
+			if numbers > 0 AND numbers < length then score = int(score + (numbers * multNumber)) : _
+			requirements = requirements + 1
 			
-			if symbols > 0 then _
-				score = int(score + (symbols * multSymbol)) : _
-				requirements = requirements + 1
+			if symbols > 0 then score = int(score + (symbols * multSymbol)) : _
+			requirements = requirements + 1
 			
-			if midChar > 0 then _
-				score = int(score + (midChar * multMidChar))
+			if midChar > 0 then score = int(score + (midChar * multMidChar))
 			
 			'-------------------------------------'
 			' Point deductions for poor practices '
 			'-------------------------------------'
 		
 			' Only Letters
-			if (alphaLC > 0 OR alphaUC > 0) AND symbols = 0 AND numbers = 0 then _
-				score = int(score - length)
+			if (alphaLC > 0 OR alphaUC > 0) AND symbols = 0 AND numbers = 0 then score = int(score - length)
 			
 			' Only Numbers
-			if alphaLC = 0 AND alphaUC = 0 AND symbols = 0 AND numbers > 0 then _
-				score = int(score - length)
+			if alphaLC = 0 AND alphaUC = 0 AND symbols = 0 AND numbers > 0 then score = int(score - length)
 			
 			' Same character exists more than once	
-			if repChar > 0 then _
-				score = int(score - repInc)
+			if repChar > 0 then score = int(score - repInc)
 			
 			' Consecutive Uppercase Letters exist
-			if consecAlphaUC > 0 then _
-				score = int(score - (consecAlphaUC * multConsecAlphaUC))
+			if consecAlphaUC > 0 then score = int(score - (consecAlphaUC * multConsecAlphaUC))
 			
 			' Consecutive Lowercase Letters exist	
-			if consecAlphaLC > 0 then _
-				score = int(score - (consecAlphaLC * multConsecAlphaLC))
+			if consecAlphaLC > 0 then score = int(score - (consecAlphaLC * multConsecAlphaLC))
 			
 			' Consecutive Numbers exist
-			if consecNumber > 0 then _
-				score = int(score - (consecNumber * multConsecNumber))
+			if consecNumber > 0 then score = int(score - (consecNumber * multConsecNumber))
 			
 			' Consecutive Sumbols exist
-			if consecSymbol > 0 then _
-				score = int(score - (consecSymbol * multConsecSymbol))
+			if consecSymbol > 0 then score = int(score - (consecSymbol * multConsecSymbol))
 			
 			' Sequential alpha strings exist (3 characters or more)
-			if seqAlpha > 0 then _
-				score = int(score - (seqAlpha * multSeqAlpha))
+			if seqAlpha > 0 then score = int(score - (seqAlpha * multSeqAlpha))
 			
 			' Sequential numeric strings exist (3 characters or more)
-			if seqNumber > 0 then _
-				score = int(score - (seqNumber * multSeqNumber))
+			if seqNumber > 0 then score = int(score - (seqNumber * multSeqNumber))
 			
 			' Sequential symbol strings exist (3 characters or more)
-			if seqSymbol > 0 then _
-				score = int(score - (seqSymbol * multSeqSymbol))
+			if seqSymbol > 0 then score = int(score - (seqSymbol * multSeqSymbol))
 		
 			'--------------------------------------------------------'
 			' Increase the score if the minimum requirements are met '
@@ -391,8 +376,7 @@
 			
 			if length >= recMinPwdLen then minReq = 2 else minReq = 4
 				
-			if requirements > minReq then _
-				score = int(score + (requirements * multRequirements))
+			if requirements > minReq then score = int(score + (requirements * multRequirements))
 			
 			'---------------------------------------'
 			' Return a strength score between 0-100 '
