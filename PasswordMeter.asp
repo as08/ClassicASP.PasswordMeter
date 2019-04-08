@@ -282,8 +282,7 @@
 			'------------------------------------------------------------------'
 			
 			for c = 1 to len(alphaPtrn) - 3
-				fwd = mid(alphaPtrn,c,3)
-				rev = StrReverse(fwd)
+				fwd = mid(alphaPtrn,c,3) : rev = StrReverse(fwd)
 				if inStr(lCase(pwd),fwd) > 0 OR inStr(lCase(pwd),rev) > 0 then seqAlpha = seqAlpha + 1
 			next
 			
@@ -292,8 +291,7 @@
 			'--------------------------------------------------------------------'
 			
 			for c = 1 to len(numericPtrn) - 3
-				fwd = mid(numericPtrn,c,3)
-				rev = StrReverse(fwd)
+				fwd = mid(numericPtrn,c,3) : rev = StrReverse(fwd)
 				if inStr(lCase(pwd),fwd) > 0 OR inStr(lCase(pwd),rev) > 0 then seqNumber = seqNumber + 1
 			next
 			
@@ -302,8 +300,7 @@
 			'-------------------------------------------------------------------'
 			
 			for c = 1 to len(symbolPtrn) - 3
-				fwd = mid(symbolPtrn,c,3)
-				rev = StrReverse(fwd)
+				fwd = mid(symbolPtrn,c,3) : rev = StrReverse(fwd)
 				if inStr(pwd,fwd) > 0 OR inStr(pwd,rev) > 0 then seqSymbol = seqSymbol + 1
 			next
 			
