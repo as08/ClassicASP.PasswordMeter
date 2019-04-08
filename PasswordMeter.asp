@@ -402,7 +402,7 @@
 			password_strength = score
 		
 		end if			
-
+		
 	end function
 
 %>
